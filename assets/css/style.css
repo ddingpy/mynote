@@ -156,6 +156,29 @@ a {
   text-decoration: underline;
 }
 
+.latest-posts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.latest-posts-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  line-height: 1.35;
+  margin-bottom: 0.45rem;
+  padding: 0.45rem 0.65rem;
+}
+
+.latest-posts-list li p {
+  margin: 0;
+}
+
+.latest-posts-list code {
+  font-size: 0.82rem;
+}
+
 .category-index {
   display: flex;
   flex-wrap: wrap;
