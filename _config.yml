@@ -1,7 +1,7 @@
-title: My Blog
+title: My Note
 description: Technical articles, tutorials, and practical life tips.
 url: "https://ddingpy.github.io"
-baseurl: "/myblog"
+baseurl: "/mynote"
 timezone: Asia/Seoul
 
 markdown: kramdown

@@ -1,4 +1,4 @@
-# My Blog (Jekyll + GitHub Pages)
+# My Note (Jekyll + GitHub Pages)
 
 A GitHub Pages-compatible Jekyll blog for technical articles, tutorials, and practical life tips.
 

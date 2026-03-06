@@ -1,5 +1,5 @@
 ---
-title: "Welcome to My Blog"
+title: "Welcome to My Note"
 date: 2026-03-06 09:00:00 +0900
 tags: [jekyll, github-pages, docker]
 ---
