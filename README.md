@@ -10,7 +10,8 @@ A GitHub Pages-compatible Jekyll blog for technical articles, tutorials, and pra
 
 ## Project Structure
 
-- `_config.yml`: Jekyll configuration
+- `_config.yml`: production Jekyll configuration (GitHub Pages)
+- `_config.dev.yml`: local development overrides (`url`/`baseurl`)
 - `_posts/`: blog posts organized by category directories (`_posts/<category>/YYYY-MM-DD-title.md`)
 - `_layouts/`: site and post layouts
 - `assets/css/style.css`: site styles
@@ -21,7 +22,7 @@ A GitHub Pages-compatible Jekyll blog for technical articles, tutorials, and pra
 - `journal.md`: dedicated landing page for your journal entries
 - `Dockerfile`: local Jekyll image
 - `docker-compose.yaml`: local run command and ports
-- `scripts/dev-server.sh`: starts Jekyll watch build + static server
+- `scripts/dev-server.sh`: starts Jekyll watch build + static server using `_config.yml,_config.dev.yml`
 - `scripts/static-server.js`: serves generated `_site` without WEBrick
 - `.github/workflows/pages.yml`: GitHub Pages deployment workflow
 

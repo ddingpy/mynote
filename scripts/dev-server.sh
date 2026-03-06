@@ -3,7 +3,7 @@ set -eu
 
 cd /srv/jekyll
 
-jekyll build --watch --force_polling &
+jekyll build --watch --force_polling --config _config.yml,_config.dev.yml &
 JEKYLL_PID=$!
 
 cleanup() {
