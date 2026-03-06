@@ -1,7 +1,6 @@
 ---
 title: "Docker Multi-Stage Builds for Smaller and Safer Images"
 date: 2026-03-04 19:10:00 +0900
-categories: [devops]
 tags: [docker, containers, cicd, performance]
 ---
 Large container images slow down CI/CD and increase security surface area.

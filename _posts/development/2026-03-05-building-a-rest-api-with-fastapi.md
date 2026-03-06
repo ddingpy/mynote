@@ -1,7 +1,6 @@
 ---
 title: "Building a REST API with FastAPI in 30 Minutes"
 date: 2026-03-05 08:30:00 +0900
-categories: [development, backend]
 tags: [python, fastapi, api, tutorial]
 ---
 FastAPI is a great choice when you want to ship a backend quickly without giving up type safety and clear docs.

@@ -7,32 +7,30 @@ permalink: /cartoon-journal/
 
 This is your dedicated space for cartoon journal entries, sketches, ideas, and story notes.
 
-<section class="journal-space">
-  <h2>Journal Space</h2>
-  <p>
-    Use this page as a calm index for your journal work. Keep entries small and consistent.
-  </p>
-  <ul class="journal-prompt-list">
-    <li>What did I draw or imagine today?</li>
-    <li>What character or scene felt strongest?</li>
-    <li>What should I improve in the next session?</li>
-  </ul>
-</section>
+## Journal Space
+
+Use this page as a calm index for your journal work. Keep entries small and consistent.
+
+- What did I draw or imagine today?
+- What character or scene felt strongest?
+- What should I improve in the next session?
 
 ## Entries
 
-{% assign journal_posts = site.categories["cartoon-journal"] %}
+{% assign journal_posts = site.posts | where_exp: "p", "p.path contains '_posts/cartoon-journal/'" %}
 
 {% if journal_posts and journal_posts.size > 0 %}
-  <ul class="post-list journal-post-list">
-    {% for post in journal_posts %}
-      <li>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date: "%Y-%m-%d" }}{% if post.tags.size > 0 %} • Tags: {{ post.tags | join: ", " }}{% endif %}</p>
-        <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+{% for post in journal_posts %}
+### [{{ post.title }}]({{ post.url | relative_url }})
+
+- Date: {{ post.date | date: "%Y-%m-%d" }}
+{% if post.tags.size > 0 %}
+- Tags: {{ post.tags | join: ", " }}
+{% endif %}
+
+{{ post.excerpt | strip_html | truncate: 180 }}
+
+{% endfor %}
 {% else %}
-  <p>No cartoon journal entries yet. Add one in <code>_posts/</code> with category <code>cartoon-journal</code>.</p>
+No cartoon journal entries yet. Add one in `_posts/cartoon-journal/`.
 {% endif %}

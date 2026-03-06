@@ -1,7 +1,6 @@
 ---
 title: "Testing Checklist Before You Ship"
 date: 2026-02-26 07:40:00 +0900
-categories: [development, quality]
 tags: [testing, qa, release]
 ---
 A short pre-release checklist catches most regressions with minimal overhead.

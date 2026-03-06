@@ -7,32 +7,28 @@ permalink: /categories/
 
 Browse posts by topic.
 
-{% assign sorted_categories = site.categories | sort %}
+{% capture category_csv %}{% for post in site.posts %}{% assign post_path_parts = post.path | split: '/' %}{% assign category_name = post_path_parts[1] %}{% if category_name and category_name != "" %}|{{ category_name }}{% endif %}{% endfor %}{% endcapture %}
+{% assign category_list = category_csv | split: '|' | uniq | sort %}
 
-<ul class="category-index">
-  {% for category in sorted_categories %}
-    {% assign category_name = category[0] %}
-    {% assign posts = category[1] %}
-    <li>
-      <a href="#{{ category_name | slugify }}">{{ category_name }}</a>
-      <span class="category-count">({{ posts | size }})</span>
-    </li>
-  {% endfor %}
-</ul>
+## Category Index
 
-{% for category in sorted_categories %}
-  {% assign category_name = category[0] %}
-  {% assign posts = category[1] %}
-  <section id="{{ category_name | slugify }}" class="category-section">
-    <h2>{{ category_name }}</h2>
-    <ul class="post-list">
-      {% for post in posts %}
-        <li>
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="post-meta">{{ post.date | date: "%Y-%m-%d" }}{% if post.tags.size > 0 %} • Tags: {{ post.tags | join: ", " }}{% endif %}</p>
-          <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
+{% for category_name in category_list %}
+{% if category_name != "" %}
+{% assign category_prefix = '_posts/' | append: category_name | append: '/' %}
+{% assign posts = site.posts | where_exp: "p", "p.path contains category_prefix" %}
+- [{{ category_name }}](#{{ category_name | slugify }}) ({{ posts | size }})
+{% endif %}
+{% endfor %}
+
+{% for category_name in category_list %}
+{% if category_name != "" %}
+{% assign category_prefix = '_posts/' | append: category_name | append: '/' %}
+{% assign posts = site.posts | where_exp: "p", "p.path contains category_prefix" %}
+## {{ category_name }}
+
+{% for post in posts %}
+- [{{ post.title }}]({{ post.url | relative_url }}) - {{ post.date | date: "%Y-%m-%d" }}{% if post.tags.size > 0 %} - Tags: {{ post.tags | join: ", " }}{% endif %}
+{% endfor %}
+
+{% endif %}
 {% endfor %}

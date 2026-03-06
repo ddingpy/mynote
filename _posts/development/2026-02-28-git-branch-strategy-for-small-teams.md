@@ -1,7 +1,6 @@
 ---
 title: "Git Branch Strategy for Small Teams"
 date: 2026-02-28 09:20:00 +0900
-categories: [development, collaboration]
 tags: [git, workflow, team]
 ---
 A lightweight branching strategy helps small teams move fast without losing code quality.

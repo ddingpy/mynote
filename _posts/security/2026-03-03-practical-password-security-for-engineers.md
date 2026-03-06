@@ -1,7 +1,6 @@
 ---
 title: "Practical Password Security for Engineers"
 date: 2026-03-03 07:45:00 +0900
-categories: [security]
 tags: [security, passwords, mfa, privacy]
 ---
 Password security is often treated as basic, but most incidents still start with credential theft.

@@ -5,13 +5,15 @@ search: false
 ---
 [
 {% for post in site.posts %}
+  {% assign post_path_parts = post.path | split: '/' %}
+  {% assign post_category = post_path_parts[1] %}
   {
     "id": {{ post.url | relative_url | jsonify }},
     "title": {{ post.title | jsonify }},
     "url": {{ post.url | relative_url | jsonify }},
     "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
     "tags": {{ post.tags | join: " " | jsonify }},
-    "categories": {{ post.categories | join: " " | jsonify }},
+    "categories": {{ post_category | jsonify }},
     "content": {{ post.content | markdownify | strip_html | normalize_whitespace | jsonify }}
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}

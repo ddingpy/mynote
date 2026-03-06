@@ -1,7 +1,6 @@
 ---
 title: "How to Write Clear API Error Messages"
 date: 2026-02-27 18:10:00 +0900
-categories: [development, backend]
 tags: [api, ux, backend]
 ---
 Good error messages reduce support requests and speed up integration.

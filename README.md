@@ -11,7 +11,7 @@ A GitHub Pages-compatible Jekyll blog for technical articles, tutorials, and pra
 ## Project Structure
 
 - `_config.yml`: Jekyll configuration
-- `_posts/`: blog posts in markdown (`YYYY-MM-DD-title.md`)
+- `_posts/`: blog posts organized by category directories (`_posts/<category>/YYYY-MM-DD-title.md`)
 - `_layouts/`: site and post layouts
 - `assets/css/style.css`: site styles
 - `assets/js/search.js`: Lunr search logic
@@ -24,6 +24,10 @@ A GitHub Pages-compatible Jekyll blog for technical articles, tutorials, and pra
 - `scripts/dev-server.sh`: starts Jekyll watch build + static server
 - `scripts/static-server.js`: serves generated `_site` without WEBrick
 - `.github/workflows/pages.yml`: GitHub Pages deployment workflow
+
+Post URL structure:
+
+- Posts are generated with a simple path: `/posts/<title>/` (no year/month/day hierarchy).
 
 ## Local Development
 
@@ -52,14 +56,13 @@ Why this works:
 - The Docker image `jekyll/jekyll:pages` already contains GitHub Pages-compatible Jekyll dependencies.
 - This project intentionally avoids `bundle install` during Docker build, so startup does not depend on direct access to `index.rubygems.org`.
 - Local serving does not use `jekyll serve`/WEBrick; it uses `jekyll build --watch` plus a small Node static server.
-```
 
 ## Writing Content
 
-Create a post in `_posts/`:
+Create a post in a category directory under `_posts/`:
 
 ```text
-_posts/YYYY-MM-DD-your-title.md
+_posts/<category>/YYYY-MM-DD-your-title.md
 ```
 
 Post front matter example:
@@ -68,7 +71,6 @@ Post front matter example:
 ---
 title: "My New Tutorial"
 date: 2026-03-06 10:00:00 +0900
-categories: [development]
 tags: [jekyll, tutorial]
 ---
 ```
@@ -77,8 +79,9 @@ Category/topic behavior:
 
 - Categories are shown on each post and on the home list.
 - Topic landing page is available at `/categories/`.
-- Add one or more categories in front matter, for example `categories: [development, backend]`.
-- Cartoon journal entries can use `categories: [cartoon-journal]` and will be grouped at `/cartoon-journal/`.
+- Use one category per post by placing the file in one folder under `_posts/<category>/`.
+- The category is inferred from the directory path (you do not need a `categories:` field in front matter).
+- Cartoon journal entries belong in `_posts/cartoon-journal/` and are grouped at `/cartoon-journal/`.
 
 Navigation behavior:
 

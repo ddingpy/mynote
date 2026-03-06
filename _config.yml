@@ -6,7 +6,7 @@ timezone: Asia/Seoul
 
 markdown: kramdown
 highlighter: rouge
-permalink: /:categories/:year/:month/:day/:title/
+permalink: /posts/:title/
 
 plugins:
   - jekyll-feed

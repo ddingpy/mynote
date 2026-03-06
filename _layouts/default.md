@@ -27,8 +27,9 @@
           <span class="breadcrumb-separator">/</span>
           {% if page.collection == "posts" %}
             <a href="{{ '/categories/' | relative_url }}">Categories</a>
-            {% if page.categories and page.categories.size > 0 %}
-              {% assign primary_category = page.categories[0] %}
+            {% assign page_path_parts = page.path | split: '/' %}
+            {% assign primary_category = page_path_parts[1] %}
+            {% if primary_category and primary_category != "" %}
               {% assign primary_category_slug = primary_category | slugify %}
               <span class="breadcrumb-separator">/</span>
               <a href="{{ '/categories/#' | append: primary_category_slug | relative_url }}">{{ primary_category }}</a>

@@ -1,23 +1,18 @@
 ---
 layout: default
 ---
+{% assign page_path_parts = page.path | split: '/' %}
+{% assign current_category = page_path_parts[1] %}
 {% assign prev_in_category = nil %}
 {% assign next_in_category = nil %}
 {% assign found_current = false %}
 
 {% for candidate in site.posts %}
-  {% if found_current %}
-    {% assign shares_category = false %}
-    {% for current_category in page.categories %}
-      {% if candidate.categories contains current_category %}
-        {% assign shares_category = true %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% if shares_category %}
+  {% assign candidate_path_parts = candidate.path | split: '/' %}
+  {% assign candidate_category = candidate_path_parts[1] %}
+  {% if found_current and current_category and candidate_category == current_category %}
       {% assign prev_in_category = candidate %}
       {% break %}
-    {% endif %}
   {% endif %}
   {% if candidate.url == page.url %}
     {% assign found_current = true %}
@@ -28,14 +23,9 @@ layout: default
   {% if candidate.url == page.url %}
     {% break %}
   {% endif %}
-  {% assign shares_category = false %}
-  {% for current_category in page.categories %}
-    {% if candidate.categories contains current_category %}
-      {% assign shares_category = true %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-  {% if shares_category %}
+  {% assign candidate_path_parts = candidate.path | split: '/' %}
+  {% assign candidate_category = candidate_path_parts[1] %}
+  {% if current_category and candidate_category == current_category %}
     {% assign next_in_category = candidate %}
   {% endif %}
 {% endfor %}
@@ -45,12 +35,10 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="post-meta">
       {{ page.date | date: "%B %-d, %Y" }}
-      {% if page.categories.size > 0 %}
-        • Categories:
-        {% for category in page.categories %}
-          {% assign category_slug = category | slugify %}
-          <a class="meta-link" href="{{ '/categories/#' | append: category_slug | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
+      {% if current_category %}
+        {% assign current_category_slug = current_category | slugify %}
+        • Category:
+        <a class="meta-link" href="{{ '/categories/#' | append: current_category_slug | relative_url }}">{{ current_category }}</a>
       {% endif %}
       {% if page.tags.size > 0 %}
         • Tags: {{ page.tags | join: ", " }}

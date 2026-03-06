@@ -1,7 +1,6 @@
 ---
 title: "Welcome to My Blog"
 date: 2026-03-06 09:00:00 +0900
-categories: [intro]
 tags: [jekyll, github-pages, docker]
 ---
 This is the first post in your Jekyll blog.
@@ -10,6 +9,6 @@ Use this structure for future technical tutorials, development notes, and practi
 
 ## Next Steps
 
-- Create new posts in the `_posts/` directory.
+- Create new posts in `_posts/<category>/` directories.
 - Keep file names in `YYYY-MM-DD-title.md` format.
-- Use tags and categories to improve search discoverability.
+- Use tags and keep one category per post based on its folder path.

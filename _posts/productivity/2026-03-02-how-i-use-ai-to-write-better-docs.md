@@ -1,7 +1,6 @@
 ---
 title: "How I Use AI to Write Better Technical Documentation"
 date: 2026-03-02 22:00:00 +0900
-categories: [productivity, writing]
 tags: [ai, documentation, workflow, engineering]
 ---
 AI tools are great documentation assistants when you give them strict structure.

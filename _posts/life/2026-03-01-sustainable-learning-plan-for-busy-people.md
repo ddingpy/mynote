@@ -1,7 +1,6 @@
 ---
 title: "A Sustainable Learning Plan for Busy Engineers"
 date: 2026-03-01 06:50:00 +0900
-categories: [life, learning]
 tags: [learning, career, habits, time-management]
 ---
 Most people fail at learning not because of low motivation, but because the plan is too heavy.
