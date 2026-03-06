@@ -6,7 +6,7 @@
     {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
-  <body>
+  <body{% if page.url == '/' %} class="is-home"{% endif %}>
     <header class="site-header">
       <div class="container">
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
