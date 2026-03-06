@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
-  <title id="title">Cartoon Journal Sample Scene</title>
+  <title id="title">Journal Sample Scene</title>
   <desc id="desc">A simple cartoon-style character concept with speech bubble and notes.</desc>
 
   <defs>
@@ -16,7 +16,7 @@
 
   <rect x="60" y="50" width="1080" height="600" rx="26" fill="#fffef9" stroke="#f59e0b" stroke-width="4" filter="url(#softShadow)" />
 
-  <text x="110" y="120" font-size="42" font-family="Verdana, sans-serif" fill="#92400e" font-weight="700">Cartoon Journal Draft #1</text>
+  <text x="110" y="120" font-size="42" font-family="Verdana, sans-serif" fill="#92400e" font-weight="700">Journal Draft #1</text>
   <text x="110" y="160" font-size="23" font-family="Verdana, sans-serif" fill="#78350f">Character idea: "Sunny", a curious cloud explorer</text>
 
   <g transform="translate(190,230)">

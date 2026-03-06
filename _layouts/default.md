@@ -12,7 +12,7 @@
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="{{ '/' | relative_url }}">Home</a>
-          <a href="{{ '/cartoon-journal/' | relative_url }}">Cartoon Journal</a>
+          <a href="{{ '/journal/' | relative_url }}">Journal</a>
           <a href="{{ '/categories/' | relative_url }}">Categories</a>
           <a href="{{ '/search/' | relative_url }}">Search</a>
           <a href="{{ '/about/' | relative_url }}">About</a>

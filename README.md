@@ -1,4 +1,4 @@
-# My Technical Blog (Jekyll + GitHub Pages)
+# My Blog (Jekyll + GitHub Pages)
 
 A GitHub Pages-compatible Jekyll blog for technical articles, tutorials, and practical life tips.
 
@@ -18,7 +18,7 @@ A GitHub Pages-compatible Jekyll blog for technical articles, tutorials, and pra
 - `search.json`: generated post index for search
 - `search.md`: search page UI
 - `categories.md`: topic/category landing page
-- `cartoon-journal.md`: dedicated landing page for your cartoon journal entries
+- `journal.md`: dedicated landing page for your journal entries
 - `Dockerfile`: local Jekyll image
 - `docker-compose.yaml`: local run command and ports
 - `scripts/dev-server.sh`: starts Jekyll watch build + static server
@@ -81,7 +81,7 @@ Category/topic behavior:
 - Topic landing page is available at `/categories/`.
 - Use one category per post by placing the file in one folder under `_posts/<category>/`.
 - The category is inferred from the directory path (you do not need a `categories:` field in front matter).
-- Cartoon journal entries belong in `_posts/cartoon-journal/` and are grouped at `/cartoon-journal/`.
+- Journal entries belong in `_posts/journal/` and are grouped at `/journal/`.
 
 Navigation behavior:
 

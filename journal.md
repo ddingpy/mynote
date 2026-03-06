@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Cartoon Journal
-permalink: /cartoon-journal/
+title: Journal
+permalink: /journal/
 ---
-# Cartoon Journal
+# Journal
 
-This is your dedicated space for cartoon journal entries, sketches, ideas, and story notes.
+This is your dedicated space for journal entries, sketches, ideas, and story notes.
 
 ## Journal Space
 
@@ -17,7 +17,7 @@ Use this page as a calm index for your journal work. Keep entries small and cons
 
 ## Entries
 
-{% assign journal_posts = site.posts | where_exp: "p", "p.path contains '_posts/cartoon-journal/'" %}
+{% assign journal_posts = site.posts | where_exp: "p", "p.path contains '_posts/journal/'" %}
 
 {% if journal_posts and journal_posts.size > 0 %}
 {% for post in journal_posts %}
@@ -32,5 +32,5 @@ Use this page as a calm index for your journal work. Keep entries small and cons
 
 {% endfor %}
 {% else %}
-No cartoon journal entries yet. Add one in `_posts/cartoon-journal/`.
+No journal entries yet. Add one in `_posts/journal/`.
 {% endif %}
