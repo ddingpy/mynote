@@ -54,7 +54,12 @@ layout: default
       {% endif %}
     </div>
     <div class="post-pager-slot post-pager-center">
-      <a href="{{ '/categories/' | relative_url }}">All Categories</a>
+      {% if current_category %}
+        {% assign current_category_slug = current_category | slugify %}
+        <a href="{{ '/categories/' | append: current_category_slug | append: '/' | relative_url }}">Category Article List</a>
+      {% else %}
+        <a href="{{ '/categories/' | relative_url }}">All Categories</a>
+      {% endif %}
     </div>
     <div class="post-pager-slot post-pager-right">
       {% if next_in_category %}
