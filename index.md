@@ -4,7 +4,7 @@ title: Home
 ---
 # Latest Posts
 
-Welcome to my blog. I share technical articles, tutorials, and practical tips.
+Welcome to my note. I write technical articles, tutorials, and practical tips.
 
 {% if site.posts.size > 0 %}
 {% assign current_month = "" %}
