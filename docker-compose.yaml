@@ -1,5 +1,5 @@
 services:
-  mynote1:
+  mynote:
     build: .
     platform: linux/amd64
     ports:
